@@ -1,12 +1,9 @@
+/* Establecer fuentes y estilos base */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,57 +11,68 @@
   -webkit-text-size-adjust: 100%;
 }
 
+/* Mejora de la legibilidad y contraste en ambos modos de color */
+:root {
+  color: #e0e0e0; /* Color de texto más claro para mejor contraste en modo oscuro */
+  background-color: #242424;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547; /* Color de texto oscuro para modo claro */
+    background-color: #ffffff;
+  }
+}
+
+/* Estilo para enlaces, con una mejor transición y enfocado en la accesibilidad */
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none; /* Elimina la decoración por defecto */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
 }
-
-a:hover {
+a:hover, a:focus {
   color: #535bf2;
+  text-decoration: underline; /* Subrayado al pasar el cursor para mejor accesibilidad */
 }
 
+/* Estilos base para el cuerpo y centralización del contenido */
 body {
   margin: 0;
+  padding: 0; /* Asegura que no hay espacio extra */
   display: flex;
-  place-items: center;
+  align-items: center; /* Mejora en la nomenclatura de flexbox */
+  justify-content: center; /* Centra el contenido horizontalmente */
   min-width: 320px;
   min-height: 100vh;
+  background-color: inherit; /* Hereda el color de fondo de :root */
 }
 
+/* Estilos para títulos, ajustando el espaciado y la escala */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3.2rem; /* Uso de rem para escalabilidad */
+  margin: 0 0 1rem; /* Añade un margen inferior */
+  line-height: 1.2; /* Ajuste en el interlineado para mejor legibilidad */
+  text-align: center; /* Alinea el texto al centro */
 }
 
+/* Estilos para botones, con enfoque en la interactividad y accesibilidad */
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  border: 2px solid transparent; /* Borde más grueso para mejor visibilidad */
+  padding: 0.8em 1.4em; /* Ajuste en el relleno para un mejor aspecto */
+  font-size: 1rem; /* Uso de rem para consistencia */
   font-weight: 500;
-  font-family: inherit;
   background-color: #1a1a1a;
+  color: inherit; /* Hereda el color del texto de :root */
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.25s, border-color 0.25s; /* Transición suave en el color de fondo y borde */
 }
 button:hover {
-  border-color: #646cff;
+  background-color: #646cff; /* Cambio en el color de fondo al pasar el cursor */
+  color: #ffffff; /* Cambio en el color del texto para contraste */
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  outline: 4px auto -webkit-focus-ring-color; /* Mejora en el enfoque para accesibilidad */
+  outline-offset: 2px; /* Espacio adicional alrededor del borde para visibilidad */
 }

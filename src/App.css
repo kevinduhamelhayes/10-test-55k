@@ -3,14 +3,20 @@
   padding: 2rem;
   text-align: center;
   width: 100%;
+  max-width: 1200px; /* Ancho máximo para mejor legibilidad */
+  box-sizing: border-box;
 }
 
 .table--showColors tr:nth-child(odd) {
   background: #333;
+  color: #fff; /* Mejor contraste */
+  padding: 8px; /* Añade un poco de espacio */
 }
 
 .table--showColors tr:nth-child(even) {
   background: #555;
+  color: #fff; /* Mejor contraste */
+  padding: 8px; /* Añade un poco de espacio */
 }
 
 header {
@@ -19,6 +25,7 @@ header {
   margin-bottom: 48px;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap; /* Ajuste para pantallas pequeñas */
 }
 
 .pointer {
